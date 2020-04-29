@@ -1,0 +1,12 @@
+{
+  "name": "naver-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/newfull5/naver-login-clone.git",
+  "author": "newfull5 <dhtocks@naver.com>",
+  "license": "MIT",
+  "scripts":{
+    "backend-start": "cd backend && nodemon server.js",
+    "frontend-start": "cd naverlogin && yarn start"
+  }
+}

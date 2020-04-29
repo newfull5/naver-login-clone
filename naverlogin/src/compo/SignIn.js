@@ -38,6 +38,22 @@ const Btn = styled.input`
 `
 class SignIn extends Component {
   
+  state = {
+    customers: ""
+  }
+
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({customers: res}))
+      .catch(err => console.log(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch("/api/customers");
+    const body = await response.json();
+    return body;
+  }
+  
     render() {
       return (
         <div>
@@ -48,6 +64,7 @@ class SignIn extends Component {
             <Input type="password" id="pw-confirm" placeholder="  비밀번호  확인"></Input>
             <Btn type="submit" value="회원가입"></Btn>
           </form>
+          {this.state.customers}
         </div>
       )
     };
