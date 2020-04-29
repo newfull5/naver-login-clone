@@ -2,12 +2,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
+const db = require('./db/db.js');
+const dbc = require('./db/dbConnect.js');
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extendeded: true}));
+dbc.connect();
 
-app.get('/api/customers', (req, res) => {
+
+app.get('/api', (req, res) => {
     res.send([
         {
             "id": "dhtocks",

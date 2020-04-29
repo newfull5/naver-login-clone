@@ -58,7 +58,7 @@ class SignIn extends Component {
       return (
         <div>
           <NaverIcon />
-          <form onSubmit={this.handleFromSubmit}>
+          <form onSubmit={this.handleFromSubmit} method='post'>
             <Input type="text" id="id" placeholder="  아이디"></Input>
             <Input type="password" id="pw" placeholder="  비밀번호"></Input>
             <Input type="password" id="pw-confirm" placeholder="  비밀번호  확인"></Input>
