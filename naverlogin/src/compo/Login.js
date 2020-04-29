@@ -38,6 +38,8 @@ const Btn = styled.input`
   font-size: 20px;
 `
 
+
+
 class Login extends Component {
 
   constructor(props) {
@@ -74,7 +76,7 @@ class Login extends Component {
     return (
       <div>
         <NaverIcon />
-        <form onSubmit={this.handleFormSubmit} method="post">
+        <form onSubmit={this.handleFormSubmit}>
           <Input type="text" name="id" placeholder="  아이디" value={this.state.id} onChange={this.handleValueChange}></Input>
           <Input type="password" name="password" placeholder="  비밀번호" value={this.state.password} onChange={this.handleValueChange}></Input>
           <Btn type="submit" value="로그인"></Btn>
